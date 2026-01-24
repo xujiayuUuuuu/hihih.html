@@ -4,6 +4,7 @@
 const worksData = {
     music: {
       title: "Interactive Music Website",
+      role: "Role: UI Design Interaction Design · Front-end Implementation",
       desc: "An interactive web project exploring the relationship between music and visual motion.",
       link: "https://xujiayuuuuuu.github.io/music/",
       leftImages: [
@@ -19,6 +20,7 @@ const worksData = {
   
     mochi: {
       title: "Mochi Landing Page",
+  role: "Role: UI Design · Visual Design · Front-end Implementation",
       desc: "A commercial landing page design focusing on product presentation and clean layout.",
       link: "https://xujiayuuuuuu.github.io/mochi.html/",
       leftImages: [
@@ -34,6 +36,7 @@ const worksData = {
   
     graduation: {
       title: "Graduation Project — Interactive Web Installation",
+      role: "Role: Visual Design · Interaction Design · Front-end (Team Project)",
       desc: "An experimental interactive web installation exploring evaluation and identity.",
       link: "https://xujiayuuuuuu.github.io/goodmodel/",
       leftImages: [
@@ -57,7 +60,7 @@ const worksData = {
   const linkEl = document.getElementById("work-link");
   const leftBox = document.getElementById("images-left");
   const rightBox = document.getElementById("images-right");
-  
+const roleEl = document.getElementById("work-role");
   // =====================
   // Scroll Reveal Observer
   // =====================
@@ -81,6 +84,7 @@ const worksData = {
     const work = worksData[key];
   
     titleEl.textContent = work.title;
+    roleEl.textContent = work.role;
     descEl.textContent = work.desc;
     linkEl.href = work.link;
     linkEl.textContent = "View Project →";
