@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>HSU — Web / UI Designer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="logo">HSU</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#works">Works</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- 首頁 -->
+<section id="home" class="hero fade-in">
+    <div class="hero-left">
+        <img src="images/me.jpg" class="avatar fade-in delay-1">
+        <h1 class="fade-in delay-2">HSU JIAYU</h1>
+        <p class="fade-in delay-3"> Web / UI Designer<br>
+         Designing interactive web experiences.</p>
+    </div>
+    
+    <div class="hero-right">
+        <h3>Skills</h3>
+        <p>
+          HTML / CSS / JavaScript<br>
+          Responsive Web Design<br>
+          UI / Interaction Design<br>
+          Figma · GitHub Pages
+        </p>
+      
+        <p class="status">
+          Currently seeking a full-time Web / UI Designer role.
+        </p>
+      </div>
+      
+  </section>
+ 
+
+<section id="works" class="works">
+    <!-- 左側作品選單 -->
+    <div class="works-list">
+        <h2>Works</h2>
+      <ul>
+        <li data-key="music">1</li>
+        <li data-key="mochi">2</li>
+        <li data-key="graduation">3</li>
+      </ul>
+    </div>
+  
+    <!-- 右側展示區（整排） -->
+    <div class="works-display">
+  
+      <!-- 左邊 2 張圖 -->
+      <div class="images-left" id="images-left"></div>
+  
+      <!-- 中間文字 -->
+      <div class="works-info">
+        <h2 id="work-title"></h2>
+        <p id="work-desc"></p>
+        <a id="work-link" href="#" target="_blank">View Project →</a>
+      </div>
+  
+      <!-- 右邊 4 張圖 -->
+      <div class="images-right" id="images-right"></div>
+  
+    </div>
+  
+  </section>
+  
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: #fff;
+    color: #111;
+  }
+  
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.9s ease-out forwards;
+  }
+  
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .reveal {
+    opacity: 0.15;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* 上方選單 */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    z-index: 10;
+    font-weight: 800;
+  }
+  
+  .top-nav nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #111;
+  }
+  .top-nav nav a:hover{
+    opacity: 0.5;
+  }
+  
+  /* 首頁 */
+  .hero {
+    min-height: 70vh;  /* 或直接刪掉 height */
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 120px 40px 60px;
+  
+  }
+  
+  .hero-left {
+    max-width: 400px;
+  }
+  
+  .hero-right {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+  }
+  .hero-right h3 {
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
+  
+  .hero-right p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .hero-right .status {
+    margin-top: 24px;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+  }
+  
+  .avatar {
+    width: 220px;
+    object-fit: cover;
+    filter: grayscale(40%);
+  }
+  
+  .works {
+    display: flex;
+    height: 100vh;
+    padding-top: 10px;
+  }
+  .works-list h2 {
+    margin-left: 40px;
+    font-size: 32px;
+    
+  }
+  /* 左側選單 */
+  .works-list {
+   font-size: 2rem;
+   color: #111;
+   margin-right: 50px;
+  
+  }
+  
+  .works-list li {
+    list-style: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-right: 100px;
+    font-weight: 800;
+    
+  }
+  
+  .works-list li:hover {
+    opacity: 0.5;
+  }
+  
+  /* 整排展示區 */
+  .works-display {
+    width: 80%;
+    display: flex;
+    align-items: flex-start; /* ✅ 圖片、文字齊頭 */
+    justify-content: space-between;
+    padding-right: 40px;
+  }
+  
+  
+  /* 左邊 2 張 */
+  .images-left,
+  .images-right {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .images-left img {
+    width: 220px;
+    margin-top: 40px;
+  }
+  
+  /* 中間文字 */
+  .works-info {
+    width: 450px;
+    text-align: left;
+    margin: 20px;
+    margin-right: 80px;
+ 
+  }
+  .works-info a{
+    color: #111;
+    opacity: 0.5;
+  }
+  .works-info a:hover{
+    color: #fff;
+    background-color: #111;
+    padding: 10 10px;
+    opacity: 1;
+  }
+  .works-info h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .works-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .works-info p:hover {
+    color: #fff;
+    background-color: #111;
+    padding: 10 10px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  /* 右邊 4 張 */
+  .images-right img {
+    width: 200px;
+    margin-top: 40px;
+  }
+  .images-left video {
+    width: 220px;   /* 跟左邊圖片一樣 */
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  
+  
