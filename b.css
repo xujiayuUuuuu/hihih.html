@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: #fff;
+    color: #111;
+  }
+  /* ===== NAV（與 A 共用）===== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+    z-index: 1000; /* 一定要比 stage 高 */
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #111;
+  }
+  .nav a:hover{
+    opacity: 0.5;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+  }
+  
+  .nav-logo {
+    font-weight: 800;
+  }
+  
+  /* 只負責製造 scroll */
+  .scroll-space {
+    height: 300vh;
+  }
+  
+  /* ===== 固定舞台 ===== */
+  .stage {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    width: 1400px;
+    height: 800px;
+  
+    display: grid;
+    grid-template-columns: 80px 220px 1fr 1.2fr;
+    gap: 32px;
+  
+    padding: 40px;
+    background: #fff;
+  }
+  
+  /* ===== index ===== */
+  .stage-index {
+    font-size: 56px;
+    font-weight: 600;
+    margin-top: 300px;
+    opacity: 0.3;
+  }
+  
+  /* ===== thumbs ===== */
+  .stage-thumbs {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #stageThumbsInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+  }
+  
+  #stageThumbsInner img {
+    width: 100%;
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  /* ===== text ===== */
+  .stage-text h3 {
+    margin: 300px 0 12px;
+    font-size: 22px;
+  }
+  
+  .stage-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 16px;
+  }
+  
+  .stage-text a {
+    font-size: 13px;
+    color: #111;
+    opacity: 0.6;
+    text-decoration: none;
+  }
+  
+  .stage-text a:hover {
+   color: #fff;
+   padding: 10px 10px;
+    background: #111;
+  }
+  
+  /* ===== preview ===== */
+  .stage-preview {
+    position: relative;
+    overflow: visible; /* ✅ 不裁切 */
+  }
+  
+  .stage-preview img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .stage-index-wrap {
+    position: absolute;
+    left: -102px;
+    top: 0;
+    height: 80px;       /* 接棒區域高度 */
+    overflow: hidden;   /* 只顯示中間 */
+  }
+  
+  
+  #stageIndex {
+    font-size: 64px;
+    font-weight: 900;
+    opacity: 0.25;
+  }
+  
+  .stage-index {
+    font-size: 64px;
+    font-weight: 900;
+    opacity: 0.2;
+    line-height: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  /* 舊的往下離場 */
+.stage-index.out {
+    animation: index-out 0.4s ease forwards;
+  }
+  
+  /* 新的從上進場 */
+  .stage-index.in {
+    animation: index-in 0.4s ease forwards;
+  }
+  
+  @keyframes index-out {
+    from {
+      transform: translateY(0);
+      opacity: 0.25;
+    }
+    to {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes index-in {
+    from {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 0.25;
+    }
+  }
+    
+  .stage-index-wrap {
+    position: relative;
+    height: 100%;
+    overflow: visible; /* 🔥 關鍵 */
+  }
+  
+  #stageIndex {
+    position: relative;     /* 🔥 不要 absolute */
+    font-size: 64px;
+    font-weight: 900;
+    color: rgb(3, 3, 3);             /* 🔥 強制顯色 */
+    opacity: 1;
+    line-height: 1;
+    z-index: 9999;          /* 🔥 壓過一切 */
+    pointer-events: none;
+  }
+  /* =========================
+   📱 MOBILE ONLY
+========================= */
+@media (max-width: 768px) {
+
+   
+    .stage {
+        position: fixed;
+        top: 20px;
+        left: 30%;
+        transform: translateX(-50%);
+      
+        width: 600px;
+        height: 800px;
+      
+        display: grid;
+        flex-direction: column;
+    
+        grid-template-columns: 80px 220px 1fr 1.2fr;
+        gap: 32px;
+      opacity: 0.8;
+        padding: 40px;
+        background: #fff;
+      }
+      
+      #stageIndex {
+       display: none;
+      }
+
+    /* 文字區吃滿寬度 */
+    .stage-text {
+      width: 300%;
+      max-width: none;
+      margin-top: 200px;
+    }
+  
+    .stage-text h3,
+    .stage-text p {
+      max-width: none;
+      margin-top: 10px;
+    }
+  
+    /* 把「文字 + 小圖」改成直向 */
+    .stage-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    
+    }
+  
+    /* 右邊那張小圖（icon / poster） */
+    .stage-text img,
+    .stage-text .text-icon,
+    .stage-text .stage-icon {
+      margin-top: 300px;
+      width: 300px;        /* 可自行調整 */
+      height: auto;
+      margin-right: 100px;
+      align-self: center; /* 或 center */
+    }
+  
+    /* 如果那張圖現在在 preview 區 */
+    .stage-preview {
+      position: relative;
+      width: 200%;
+      height: auto;
+      margin-top: 500px;
+      margin-right: 100px;
+    }
+  
+    .stage-preview img {
+      position: none;
+      width: 100px;       /* 手機 icon 尺寸 */
+      height: auto;
+      object-fit: contain;
+      margin-right: 200px;
+    }
+  }
+  

@@ -1,128 +1,112 @@
-// =====================
-// 資料
-// =====================
-const worksData = {
-    music: {
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("script.js loaded");
+
+  const works = [
+    {
+      index: 1,
       title: "Interactive Music Website",
-      role: "Role: UI Design Interaction Design · Front-end Implementation",
       desc: "An interactive web project exploring the relationship between music and visual motion.",
       link: "https://xujiayuuuuuu.github.io/music/",
-      leftImages: [
+      thumbs: [
         "images/music1.png",
-        "images/music2.png"
-      ],
-      rightImages: [
+        "images/music2.png",
         "images/music3.png",
         "images/music4.png",
         "images/music5.png"
+        
       ]
     },
-  
-    mochi: {
+    {
+      index: 2,
       title: "Mochi Landing Page",
-  role: "Role: UI Design · Visual Design · Front-end Implementation",
-      desc: "A commercial landing page design focusing on product presentation and clean layout.",
+      desc: "Commercial landing page focusing on product presentation.",
       link: "https://xujiayuuuuuu.github.io/mochi.html/",
-      leftImages: [
+      thumbs: [
         "images/mochi1.png",
-        "images/mochi2.png"
-      ],
-      rightImages: [
+        "images/mochi2.png",
         "images/mochi3.png",
         "images/mochi4.png",
-        "images/mochi5.png",
+        "images/mochi5.png"
       ]
     },
-  
-    graduation: {
-      title: "Graduation Project — Interactive Web Installation",
-      role: "Role: Visual Design · Interaction Design · Front-end (Team Project)",
-      desc: "An experimental interactive web installation exploring evaluation and identity.",
+    {
+      index: 3,
+      title: "Graduation Project",
+      desc: "Interactive web installation exploring evaluation and identity.",
       link: "https://xujiayuuuuuu.github.io/goodmodel/",
-      leftImages: [
+      thumbs: [
         "images/good1.png",
-        "images/good2.png"
-      ],
-      rightImages: [
+        "images/good2.png",
         "images/good3.png",
         "images/good4.png",
         "images/good5.png"
       ]
-    }
-  };
-  
-  // =====================
-  // DOM
-  // =====================
-  const listItems = document.querySelectorAll(".works-list li");
-  const titleEl = document.getElementById("work-title");
-  const descEl = document.getElementById("work-desc");
-  const linkEl = document.getElementById("work-link");
-  const leftBox = document.getElementById("images-left");
-  const rightBox = document.getElementById("images-right");
-const roleEl = document.getElementById("work-role");
-  // =====================
-  // Scroll Reveal Observer
-  // =====================
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
     },
     {
-      threshold: 0.3
+      index: 4,
+      title: "Food Dating App",
+      desc: "A dating app concept using food as social language.",
+      
+      thumbs: [
+        "images/foodie1.png",
+        "images/foodie2.png",
+        "images/foodie3.png",
+        "images/foodie4.png",
+        "images/foodie5.png",
+      ]
+    },
+    {
+      index: 5,
+      title: "Minimal Music Player",
+      desc: "Minimal UI prototype for music playback.",
+      thumbs: [
+        "images/mu1.png",
+        "images/mu2.png"
+      ]
     }
-  );
+  ];
+
+  const expandedList = document.getElementById("expandedList");
+  expandedList.innerHTML = works.map(w => `
+  <article class="expanded-row">
+    <div class="expanded-num">
+      ${String(w.index).padStart(2, "0")}
+    </div>
+
+    <div class="expanded-left">
+      ${w.thumbs.slice(0,2).map(src => `<img src="${src}">`).join("")}
+    </div>
+
+    <div class="expanded-text">
+      <h3>${w.title}</h3>
+      <p class="desc">${w.desc}</p>
+
+      ${w.link ? `
+        <a href="${w.link}" target="_blank" class="work-link">
+          Visit →
+        </a>
+      ` : ``}
+    </div>
+
+    <div class="expanded-right">
+      ${w.thumbs.slice(2).map(src => `<img src="${src}">`).join("")}
+    </div>
+  </article>
+`).join("");
+
+  const handoff = document.getElementById("handoff");
+
+  const io = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      document.body.classList.add("fade-out");
   
-  // =====================
-  // Render function
-  // =====================
-  function renderWork(key) {
-    const work = worksData[key];
+      // ⏱ 等淡出動畫跑完再進 B
+      setTimeout(() => {
+        window.location.href = "b.html";
+      }, 500); // 這個時間要跟 CSS transition 一樣
+    }
+  }, { threshold: 1 });
   
-    titleEl.textContent = work.title;
-    roleEl.textContent = work.role;
-    descEl.textContent = work.desc;
-    linkEl.href = work.link;
-    linkEl.textContent = "View Project →";
+  io.observe(handoff);
   
-    leftBox.innerHTML = "";
-    rightBox.innerHTML = "";
-  // 左邊圖片（全部都是圖片）
-work.leftImages.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.classList.add("reveal");
-  
-    leftBox.appendChild(img);
-    observer.observe(img);
-  });
-  
-  
-    // 右邊圖片
-    work.rightImages.forEach(src => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.classList.add("reveal");
-      rightBox.appendChild(img);
-      observer.observe(img);
-    });
-  }
-  
-  // =====================
-  // 預設載入
-  // =====================
-  renderWork("music");
-  
-  // =====================
-  // 點擊切換作品
-  // =====================
-  listItems.forEach(item => {
-    item.addEventListener("click", () => {
-      renderWork(item.dataset.key);
-    });
-  });
-  
+});
