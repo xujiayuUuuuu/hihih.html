@@ -1,26 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("script.js loaded");
-
   const works = [
     {
       index: 1,
       title: "Interactive Music Website",
       desc: "An interactive web project exploring the relationship between music and visual motion.",
-      link: "https://xujiayuuuuuu.github.io/music/",
+      link: "https://xujiayuuuu.github.io/music/",
       thumbs: [
         "images/music1.png",
         "images/music2.png",
         "images/music3.png",
         "images/music4.png",
         "images/music5.png"
-        
       ]
     },
     {
       index: 2,
       title: "Mochi Landing Page",
       desc: "Commercial landing page focusing on product presentation.",
-      link: "https://xujiayuuuuuu.github.io/mochi.html/",
+      link: "https://xujiayuuuu.github.io/mochi.html/",
       thumbs: [
         "images/mochi1.png",
         "images/mochi2.png",
@@ -31,9 +29,31 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       index: 3,
+      title: "NEXA — SaaS Dashboard Platform",
+      desc: "A SaaS dashboard platform designed to help growing teams monitor data, system performance, and operational insights in one centralized interface.",
+      link: "https://xujiayuuuuuu.github.io/black/",
+      thumbs: [
+        "images/foodie1.png",
+        "images/foodie2.png",
+        "images/foodie3.png",
+        "images/foodie4.png",
+        "images/foodie5.png"
+      ]
+    },
+    {
+      index: 4,
+      title: "Minimal Music Player",
+      desc: "Minimal UI prototype for music playback.",
+      thumbs: [
+        "images/mu1.png",
+        "images/mu2.png"
+      ]
+    },
+    {
+      index: 5,
       title: "Graduation Project",
       desc: "Interactive web installation exploring evaluation and identity.",
-      link: "https://xujiayuuuuuu.github.io/goodmodel/",
+      link: "https://xujiayuuuu.github.io/goodmodel/",
       thumbs: [
         "images/good1.png",
         "images/good2.png",
@@ -41,58 +61,41 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/good4.png",
         "images/good5.png"
       ]
-    },
-    {
-      index: 4,
-      title: "Food Dating App",
-      desc: "A dating app concept using food as social language.",
-      
-      thumbs: [
-        "images/foodie1.png",
-        "images/foodie2.png",
-        "images/foodie3.png",
-        "images/foodie4.png",
-        "images/foodie5.png",
-      ]
-    },
-    {
-      index: 5,
-      title: "Minimal Music Player",
-      desc: "Minimal UI prototype for music playback.",
-      thumbs: [
-        "images/mu1.png",
-        "images/mu2.png"
-      ]
     }
   ];
+  
 
   const expandedList = document.getElementById("expandedList");
-  expandedList.innerHTML = works.map(w => `
-  <article class="expanded-row">
-    <div class="expanded-num">
-      ${String(w.index).padStart(2, "0")}
-    </div>
+  expandedList.innerHTML = works
+  .sort((a, b) => a.index - b.index)
+  .map(w => `
+    <article class="expanded-row">
+      <div class="expanded-num">
+        ${String(w.index).padStart(2, "0")}
+      </div>
 
-    <div class="expanded-left">
-      ${w.thumbs.slice(0,2).map(src => `<img src="${src}">`).join("")}
-    </div>
+      <div class="expanded-left">
+        ${w.thumbs.slice(0,2).map(src => `<img src="${src}">`).join("")}
+      </div>
 
-    <div class="expanded-text">
-      <h3>${w.title}</h3>
-      <p class="desc">${w.desc}</p>
+      <div class="expanded-text">
+        <h3>${w.title}</h3>
+        <p class="desc">${w.desc}</p>
 
-      ${w.link ? `
-        <a href="${w.link}" target="_blank" class="work-link">
-          Visit →
-        </a>
-      ` : ``}
-    </div>
+        ${w.link ? `
+          <a href="${w.link}" target="_blank" class="work-link">
+            Visit →
+          </a>
+        ` : ``}
+      </div>
 
-    <div class="expanded-right">
-      ${w.thumbs.slice(2).map(src => `<img src="${src}">`).join("")}
-    </div>
-  </article>
-`).join("");
+      <div class="expanded-right">
+        ${w.thumbs.slice(2).map(src => `<img src="${src}">`).join("")}
+      </div>
+    </article>
+  `)
+  .join("");
+
 
   const handoff = document.getElementById("handoff");
 

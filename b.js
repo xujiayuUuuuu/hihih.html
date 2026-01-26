@@ -1,69 +1,68 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    const works = [
-      {
-        index: 1,
-        title: "如果聲音記得 ",
-        desc: "- Interactive Music Website An interactive web project exploring the relationship between music and visual motion.",
-        link: "https://xujiayuuuuuu.github.io/music/",
-        thumbs: [
-          "images/music1.png",
-          "images/music2.png",
-          "images/music3.png",
-          "images/music4.png",
-          "images/music5.png"
-        ]
-      },
-      {
-        index: 2,
-        title: "Mochi Landing Page",
-        desc: "Commercial landing page focusing on product presentation.",
-        link: "https://xujiayuuuuuu.github.io/mochi.html/",
-        thumbs: [
-          "images/mochi1.png",
-          "images/mochi2.png",
-          "images/mochi3.png",
-          "images/mochi4.png",
-          "images/mochi5.png"
-        ]
-      },
-      {
-        index: 3,
-        title: "模範生 ",
-        desc: "- Graduation Project Interactive web installation exploring evaluation and identity.",
-        link: "https://xujiayuuuuuu.github.io/goodmodel/",
-        thumbs: [
-          "images/good1.png",
-          "images/good2.png",
-          "images/good3.png",
-          "images/good4.png",
-          "images/good5.png"
-        ]
-      },
-      {
-        index: 4,
-        title: "食遇 ",
-        desc: "－ Food Dating App A dating app concept using food as social language.",
-        link: "",
-        thumbs: [
-            "images/foodie1.png",
-            "images/foodie2.png",
-            "images/foodie3.png",
-            "images/foodie4.png",
-            "images/foodie5.png"
-        ]
-      },
-      {
-        index: 5,
-        title: "Minimal Music Player",
-        desc: "Minimal UI prototype for music playback.",
-        link: "",
-        thumbs: [
-          "images/mu1.png",
-          "images/mu2.png"
-        ]
-      }
-    ];
+  const works = [
+    {
+      index: 1,
+      title: "Interactive Music Website",
+      desc: "An interactive web project exploring the relationship between music and visual motion.",
+      link: "https://xujiayuuuu.github.io/music/",
+      thumbs: [
+        "images/music1.png",
+        "images/music2.png",
+        "images/music3.png",
+        "images/music4.png",
+        "images/music5.png"
+      ]
+    },
+    {
+      index: 2,
+      title: "Mochi Landing Page",
+      desc: "Commercial landing page focusing on product presentation.",
+      link: "https://xujiayuuuu.github.io/mochi.html/",
+      thumbs: [
+        "images/mochi1.png",
+        "images/mochi2.png",
+        "images/mochi3.png",
+        "images/mochi4.png",
+        "images/mochi5.png"
+      ]
+    },
+    {
+      index: 3,
+      title: "NEXA — SaaS Dashboard Platform",
+      desc: "A SaaS dashboard platform designed to help growing teams monitor data, system performance, and operational insights in one centralized interface.",
+      link: "https://xujiayuuuu.github.io/black/",
+      thumbs: [
+        "images/foodie1.png",
+        "images/foodie2.png",
+        "images/foodie3.png",
+        "images/foodie4.png",
+        "images/foodie5.png"
+      ]
+    },
+    {
+      index: 4,
+      title: "Minimal Music Player",
+      desc: "Minimal UI prototype for music playback.",
+      thumbs: [
+        "images/mu1.png",
+        "images/mu2.png"
+      ]
+    },
+    {
+      index: 5,
+      title: "Graduation Project",
+      desc: "Interactive web installation exploring evaluation and identity.",
+      link: "https://xujiayuuuu.github.io/goodmodel/",
+      thumbs: [
+        "images/good1.png",
+        "images/good2.png",
+        "images/good3.png",
+        "images/good4.png",
+        "images/good5.png"
+      ]
+    }
+  ];
+  
   
     const indexEl   = document.getElementById("stageIndex");
     const titleEl   = document.getElementById("stageTitle");
