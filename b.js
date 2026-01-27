@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "規劃非線性瀏覽體驗，提升探索感與節奏感",
         "整合視覺設計與前端動畫，完成完整互動頁面"
       ],
-      link: "https://xujiayuuuu.github.io/music/",
+      link: "https://xujiayuuuuuu.github.io/music/",
       thumbs: [
         "images/music1.png",
         "images/music2.png",
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "設計符合品牌調性的視覺風格與互動效果",
         "將 UI 設計實際轉換為可上線的前端頁面"
       ],
-      link: "https://xujiayuuuu.github.io/mochi.html/",
+      link: "https://xujiayuuuuuu.github.io/mochi.html/",
       thumbs: [
         "images/mochi1.png",
         "images/mochi2.png",
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "設計符合企業使用情境的深色介面與狀態視覺",
         "模擬實際 SaaS 產品的操作流程與使用邏輯"
       ],
-      link: "https://xujiayuuuu.github.io/black/",
+      link: "https://xujiayuuuuuu.github.io/black/",
       thumbs: [
         "images/foodie1.png",
         "images/foodie2.png",
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "將抽象議題轉化為可被體驗的互動流程",
         "於實體展示情境中完成穩定運作的網頁作品"
       ],
-      link: "https://xujiayuuuu.github.io/goodmodel/",
+      link: "https://xujiayuuuuuu.github.io/goodmodel/",
       thumbs: [
         "images/good1.png",
         "images/good2.png",

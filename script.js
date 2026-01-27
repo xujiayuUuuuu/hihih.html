@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       index: 1,
       title: "Interactive Music Website",
       desc: "An interactive web project exploring the relationship between music and visual motion.",
-      link: "https://xujiayuuuu.github.io/music/",
+      link: "https://xujiayuuuuuu.github.io/music/",
       thumbs: [
         "images/music1.png",
         "images/music2.png",
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       index: 2,
       title: "Mochi Landing Page",
       desc: "Commercial landing page focusing on product presentation.",
-      link: "https://xujiayuuuu.github.io/mochi.html/",
+      link: "https://xujiayuuuuuu.github.io/mochi.html/",
       thumbs: [
         "images/mochi1.png",
         "images/mochi2.png",
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       index: 5,
       title: "Graduation Project",
       desc: "Interactive web installation exploring evaluation and identity.",
-      link: "https://xujiayuuuu.github.io/goodmodel/",
+      link: "https://xujiayuuuuuu.github.io/goodmodel/",
       thumbs: [
         "images/good1.png",
         "images/good2.png",
