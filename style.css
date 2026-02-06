@@ -1031,7 +1031,7 @@
     }
     .magazine-content-wrapper {
       gap: 20px;
-      height: 400vh;
+   
     }
     .mag-row {
       flex-direction: column; /* 卡片改為上下堆疊 */
