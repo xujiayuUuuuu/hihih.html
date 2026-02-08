@@ -979,6 +979,21 @@
       display: none !important;
     }
   
+    .section-deco {
+      position: absolute;
+      top: 0px;
+      width: 80%;
+      padding: 0 10px;
+    flex-direction: column;
+    gap: 10px;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: #2b2b2b; /* 黑底時可改為 #888 */
+      z-index: 10;
+      pointer-events: none;
+     
+  }
     /* 2. 導覽列高度微調 */
     .nav {
       height: 32px;
@@ -1002,8 +1017,11 @@
     }
   
     /* 4. Selected Works (Stack Section) 調整 */
+    .stack-section {
+      height: 300vh;     /* 關鍵：把原本 400vh 殺掉 */
+    }
     .stack-pin {
-      padding: 0 20px;
+      padding: 40px 20px !important;
       flex-direction: column; /* 改為垂直排列 */
     }
     .stack-layout {
@@ -1022,75 +1040,168 @@
       margin-top: 10px;
       font-size: 14px;
     }
-    .stack-stage {
-      width: 100%;
-      height: 350px; /* 手機版縮短高度 */
-    }
+   .stack-stage {
+    height: auto !important; /* 讓高度由圖片決定 */
+    margin-top: 20px;
+  }
     .stack-item img {
-      height: 300px;
+      height: auto;
+      width: 450px;
+      margin-bottom: 0px;
+      
     }
-  
+   .scroll-gap{
+    height: 0 !important;      /* 強制將高度歸零 */
+    display: none;
+   }
     /* 5. 8張流程圖 (Process Section) 調整 */
     .process-header h2 {
       font-size: 32px;
-      padding: 0 20px;
+      padding: 0 0px;
+      text-align: left;
+      margin-top: 0px;
     }
     .process-header p {
       font-size: 14px;
-      padding: 0 20px;
+      padding: 0 0px;
+   
+      text-align: left;
     }
     .process-map {
-      height: 40vh;
+      height: 70vh;
     }
     .step {
       width: 85%; /* 圖片在手機版佔據大部分寬度 */
     }
     .step img {
-      width: 100%;
+      width: 70%;
+     margin-left: 40px;
+     margin-top: 300px;
+     margin-bottom: 20px;
+    }
+    .step span{
+      margin-left: 39px;
+      margin-top: 10px;
+    }
+    .about-case-spacer {
+      height: 0 !important;      /* 強制將高度歸零 */
+      display: none;             /* 或者直接隱藏它 */
+    }
+    /* 6. About Me (Magazine Section) 調整 */
+    .magazine-section {
+      position: relative;    /* 1. 解除 sticky，改回相對定位 */
+      height: auto;          /* 2. 高度由內容撐開，不再鎖死 100vh */
+      min-height: 100vh;
+      padding: 80px 0;       /* 增加上下留白 */
+      overflow: visible;     /* 確保文字不會被切掉 */
+      display: block;        /* 改回 block 佈局 */
     }
   
-    /* 6. About Me (Magazine Section) 調整 */
     .bg-text {
-      font-size: 25vw; /* 背景字稍微大一點 */
-      opacity: 0.1;
+      font-size: 35vw;
+      top: 10%;              /* 讓大字移到背景上方做裝飾 */
+      transform: none;
+      opacity: 0.05;
+      position: absolute;
     }
+  
     .magazine-content-wrapper {
-      gap: 20px;
-   
-    }
-    .mag-row {
-      flex-direction: column; /* 卡片改為上下堆疊 */
-      gap: 20px;
-   
-    }
-    .card {
-      width: 70% !important;
-
-      transform: none !important; /* 取消旋轉，手機版容易亂 */
-    }
-    .photo-card img {
-      width: 100%;
+      width: 90%;
+      max-width: none;
+      margin: 0 auto;
+      gap: 40px;             /* 增加卡片之間的間距 */
+      display: flex;
+      flex-direction: column;
       height: auto;
     }
-    .dark-box {
+  
+    .mag-row {
+      flex-direction: column;
       width: 100%;
+      gap: 40px;
+    }
+    .scroll-trigger-space {
+      display: none; /* 隱藏手機版不需要的滾動觸發空間 */
+    }
+   
+    /* 通用卡片：寬度撐滿，高度自動 */
+    .card {
+      width: 100% !important;
+      height: auto !important;
+      padding: 15px 15px 35px 15px;
+      opacity: 1 !important;        /* 確保在手機上直接顯示 */
+      transform: none !important;    /* 移除旋轉，讓閱讀更直覺 */
+      position: relative;
+      box-sizing: border-box;
+    }
+  
+    /* 調整圖片大小，不要佔滿整個手機螢幕 */
+    .photo-card img {
+      width: 100%;
+      height: 300px; /* 固定一個適合手機看的高度 */
+      object-fit: cover;
+    }
+  
+    /* 文字框：確保字體間距適中 */
+    .dark-box {
+      width: 100% !important;
+      padding: 25px;
       min-height: auto;
     }
   
+    .dark-box p {
+      font-size: 14px;
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+      color: #eee;
+      text-align: left; /* 手機版左對齊較易閱讀 */
+    }
+  
+    /* 裝飾文字處理：不擋到主內容 */
+    .top-deco, .bottom-deco {
+      position: relative; /* 改為 relative 讓它們排在內容前後 */
+      width: 90%;
+      margin: 20px auto;
+      text-align: center;
+      top: auto;
+      bottom: auto;
+    }
+    .view-project-btn {
+      display: inline-block;
+      padding: 10px 10px;
+      width: 200px;
+      background-color: #555; /* 深灰色按鈕 */
+      color: white;
+      text-decoration: none;
+      font-size: 2.5vw;
+      letter-spacing: 0.15em;
+      transition: background-color 0.3s ease;
+      pointer-events: auto; /* 按鈕可點擊 */
+  }
     /* 7. Case Study (FoodieFriend) 調整 */
+    .case-study-section {
+      position: relative; 
+      width: 100%;
+      /* 設定為 400vh 代表要滑 4 頁的高度才會結束這一區 */
+      height: 400vh; 
+      background-color: #000;
+      z-index: 60;
+  }
     .sticky-content-wrapper {
       flex-direction: column; /* 文字在上，圖片在下 */
       padding: 20px;
+    
       justify-content: flex-start;
-      padding-top: 80px;
+      padding-top: 0px;
     }
     .case-study-title {
       font-size: 36px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     .case-study-intro {
       font-size: 14px;
       max-width: 100%;
+      margin-bottom: 10px;
     }
     .case-study-details {
       display: none; /* 手機版太擠，建議隱藏細節或精簡 */
@@ -1098,11 +1209,12 @@
     .case-study-image-gallery {
       width: 100%;
       height: 50vh;
-      margin-top: 20px;
+      margin-top: 0px;
     }
     .gallery-image {
       width: 200px; /* 手機 App 截圖縮小 */
       right: 50%;
+
       transform: translateX(50%) translateY(30px); /* 居中 */
     }
     .gallery-image.active {
